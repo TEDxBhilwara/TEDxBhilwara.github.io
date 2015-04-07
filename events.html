@@ -21,7 +21,7 @@
          <img src="images/Logo.jpg" style="width:337.84px; height:100px">
      </a>
   
-        <span style="float:right"><h1 style="margin-left:20px;">JULY, 26</h1></span>
+        <span style="float:right"><h1 style="margin-left:20px;">JULY, 26</h1><div id="countdown" style="margin-left:20px; font-weight:bold; font-size:150%;"></div></span>
     
         <h3></h3>
 
@@ -145,6 +145,35 @@
 
         ga('create', 'UA-61581943-1', 'auto');
         ga('send', 'pageview');
+    </script>
+
+    <script>
+        var end = new Date('07/26/2015 10:1 AM');
+
+        var _second = 1000;
+        var _minute = _second * 60;
+        var _hour = _minute * 60;
+        var _day = _hour * 24;
+        var timer;
+
+        function showRemaining() {
+            var now = new Date();
+            var distance = end - now;
+            if (distance < 0) {
+
+                clearInterval(timer);
+                document.getElementById('countdown').innerHTML = 'EXPIRED!';
+
+                return;
+            }
+            var days = Math.floor(distance / _day);
+            
+
+            document.getElementById('countdown').innerHTML = days + ' days to go ';
+            
+        }
+
+        timer = setInterval(showRemaining, 1000);
     </script>
 
 </html>
