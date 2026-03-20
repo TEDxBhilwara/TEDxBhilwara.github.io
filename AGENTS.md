@@ -47,3 +47,30 @@ No build step. No package manager. Pure HTML/CSS/JS served directly by GitHub Pa
 ## Deployment
 
 Pushing to `master` deploys automatically via GitHub Pages. There is no staging environment.
+
+## Git Commit Guidelines
+- **No Co-Authored-By:** Do not add `Co-Authored-By` trailers or otherwise credit yourself in commit messages.
+- **Conventional Commits:** All commit messages must follow the Conventional Commits specification. The format is:
+  ```
+  <type>[optional scope]: <description>
+
+  [optional body]
+
+  [optional footer(s)]
+  ```
+- **Types:**
+  - `feat` — a new feature (correlates with a MINOR version bump)
+  - `fix` — a bug fix (correlates with a PATCH version bump)
+  - `docs` — documentation-only changes
+  - `style` — formatting, whitespace, etc. (no code logic change)
+  - `refactor` — code restructuring without changing behavior
+  - `perf` — performance improvements
+  - `test` — adding or updating tests
+  - `build` — changes to build system or dependencies
+  - `ci` — CI/CD configuration changes
+  - `chore` — other maintenance tasks
+- **Scope:** An optional noun in parentheses after the type describing the section of the codebase affected (e.g., `feat(camera):`, `fix(ui):`).
+- **Description:** A short imperative summary immediately after the colon and space.
+- **Body:** Optional. Separated from the description by a blank line. Provides additional context or motivation.
+- **Footer(s):** Optional. Separated from the body by a blank line. Use git trailer format (`token: value` or `token #value`).
+- **Breaking Changes:** Append `!` after the type/scope (e.g., `feat!:` or `refactor(api)!:`) and/or add a `BREAKING CHANGE:` footer. Breaking changes correlate with a MAJOR version bump.
